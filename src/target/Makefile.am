@@ -24,7 +24,8 @@ noinst_LTLIBRARIES += %D%/libtarget.la
 	$(STM8_SRC) \
 	$(INTEL_IA32_SRC) \
 	$(ESIRISC_SRC) \
-        $(ARC_SRC) \
+	$(ARC_SRC) \
+	$(GAP8_SRC) \
 	%D%/avrt.c \
 	%D%/dsp563xx.c \
 	%D%/dsp563xx_once.c \
@@ -155,10 +156,16 @@ ESIRISC_SRC = \
 	%D%/esirisc_trace.c
 
 ARC_SRC = \
-        %D%/arc.c \
-        %D%/arc_cmd.c \
-        %D%/arc_jtag.c \
-        %D%/arc_mem.c
+	%D%/arc.c \
+	%D%/arc_cmd.c \
+	%D%/arc_jtag.c \
+	%D%/arc_mem.c
+
+GAP8_SRC = \
+	%D%/gap8/tap_adv_debug_interface.c \
+	%D%/gap8/gap8_adv_dbg_unit.c \
+	%D%/gap8/gap8.c \
+	%D%/gap8/gap8_semihosting.c
 
 %C%_libtarget_la_SOURCES += \
 	%D%/algorithm.h \
